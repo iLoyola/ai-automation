@@ -135,7 +135,6 @@
                     title="iLoyola Form"
                         >
                 </iframe>
-                <script src="https://link.msgsndr.com/js/form_embed.js"></script>
             </div>
           <aside class="p-6 rounded-2xl bg-white/60 flex flex-col gap-4" aria-labelledby="get-in-touch">
             <h3 id="get-in-touch" class="text-sm font-semibold">Get in touch</h3>
@@ -187,6 +186,13 @@ export default {
       newsletterEmail: '',
       year: new Date().getFullYear(),
     }
+  },
+  mounted() {
+    // Load the form embed script dynamically
+    const script = document.createElement('script')
+    script.src = 'https://link.msgsndr.com/js/form_embed.js'
+    script.async = true
+    document.head.appendChild(script)
   },
   methods: {
     onSubmit() {
